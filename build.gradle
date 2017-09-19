@@ -497,7 +497,7 @@ apply from: 'gradle/assemble.gradle'
 apply from: 'gradle/upload.gradle'
 apply from: 'gradle/idea.gradle'
 apply from: 'gradle/eclipse.gradle'
-apply from: 'gradle/quality.gradle'
+// apply from: 'gradle/quality.gradle'
 apply from: 'gradle/jdk9.gradle'
 
 // If a local configuration file for tweaking the build is present, apply it
@@ -534,3 +534,9 @@ def isBuildInChina() {
 //licenseFormat.dependsOn licenseFormatCustom
 //licenseFormat.dependsOn licenseFormatGradle
 //
+
+allprojects {
+        if (!['performance'].contains(it.name)) {
+            apply plugin: 'jacoco'
+        }
+}
