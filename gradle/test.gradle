@@ -34,7 +34,7 @@ allprojects {
         forkEvery = 50
         maxParallelForks = isRunningOnCI() ? 1 : Runtime.runtime.availableProcessors()
         scanForTestClasses = true
-        ignoreFailures = false
+        ignoreFailures = true
         testLogging {
             exceptionFormat = 'full'
             // uncomment the following line if you need more logging
